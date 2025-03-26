@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Css flexbox</title>
+	<style type="text/css">
+		.container{
+			border: 2px solid red;
+			display: flex;
+			height: 80vh;
+			/*these all flexbox properties is used with container*/
+			/*justify-content flex the item  in the center horizontaly or along the main axis*/
+			/*justify-content: center;*/
+			/*align-items in the center vertically or along the cross axis*/
+			align-items:center;
+			justify-content: flex-start;
+			/*align-items:flex-end;*/
+
+		    /*flex-direction: column;*/
+
+		    /*flex-wrap will wrap item in multiple line if space will available in single line*/
+		    /*flex-wrap: wrap;*/
+		    /*flex-wrap: wrap-reverse;*/
+
+            /*it will flex the multiple line item in center */
+		    align-content: center;
+		    /*align-content: flex-end;
+		    align-content: flex-start;*/
+
+            /*it will set two properties together first one direction and flex-wrap */
+		    /*flex-flow: row wrap;*/
+
+		    /*gap properties*/
+		    /*gap: 30px;
+		    row-gap: 30px;
+		    column-gap:40px ;*/
+
+
+            /*this is used both row gap and coloumn gap together*/
+		    gap: 40px 10px;
+		}
+
+		.item{
+			flex-grow: 1;
+			/*flex-shrink will minimize the size of item when minimize the display or screen where it is applied in comaprison to others and 2 means it shrink the size of item 2 times where it is applied in comparison to other normal items*/
+			flex-shrink: 2;
+			height: 92px;
+			width: 92px;
+			border: 2px soloid black;
+			margin: 4px;
+			background-color: blueviolet;
+		}
+		.item1{
+			flex-grow: 1;
+			/*flex-shrink: 2;*/
+			height: 92px;
+			width: 92px;
+			border: 2px soloid black;
+			margin: 4px;
+			background-color: blueviolet;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<div class="container">
+			<div class="item"></div>
+			<div class="item1"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<!-- <div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div> -->
+		</div>
+	</main>
+
+</body>
+</html>

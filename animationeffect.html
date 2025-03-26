@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Animation Effects</title>
+        <style>
+        body {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            flex-direction: column;
+        }
+
+        .bouncing-ball {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: relative;
+            animation: bounce 2s infinite ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-150px);
+            }
+        }
+
+        .glowing-button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px #007BFF;
+            }
+            100% {
+                box-shadow: 0 0 20px #007BFF;
+            }
+        }
+
+        .rotating-box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin-top: 30px;
+            animation-name: rotate;       
+            animation-duration: 3s;       
+            animation-timing-function: linear; 
+            animation-iteration-count: infinite; 
+
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <div class="bouncing-ball"></div>
+        <button class="glowing-button">Glowing Button</button>
+        <div class="rotating-box"></div>
+    </body>
+</html>

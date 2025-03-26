@@ -1,0 +1,97 @@
+<!--use of css display properties -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Content</title>
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+             
+            font-family: Arial, sans-serif;
+        }
+
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 20px;
+        }
+
+        .navbar .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* Content Section */
+        .container {
+            display: block;
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .content-box {
+            display: block;
+            background: lightgray;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MyWebsite</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+        <p>This is a simple webpage using different CSS display properties.</p>
+        
+        <div class="content-box">
+            <h2>About Us</h2>
+            <p>We provide amazing services to help you grow your business.</p>
+        </div>
+
+        <div class="content-box">
+            <h2>Our Services</h2>
+            <p>Web Development, App Development, Digital Marketing, and more.</p>
+        </div>
+    </div>
+
+</body>
+</html>

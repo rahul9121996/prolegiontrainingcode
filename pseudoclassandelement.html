@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-classes & Pseudo-elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* Pseudo-class: Change button color on hover */
+        button:hover {
+            background-color: blue;
+            color: white;
+        }
+        
+        /* Pseudo-class: Change input border when focused */
+        input:focus {
+            border: 2px solid green;
+        }
+        
+        /* Pseudo-class: Style first child */
+        ul li:first-child {
+            font-weight: bold;
+            color: red;
+        }
+        
+        /* Pseudo-class: Style last child */
+        ul li:last-child {
+            font-style: italic;
+            color: blue;
+        }
+        
+        /* Pseudo-element: Style first letter of paragraph */
+        p::first-letter {
+            font-size: 2em;
+            color: darkorange;
+        }
+        
+        /* Pseudo-element: Add content before heading */
+        h1::before {
+            content: "🔥 ";
+        }
+        
+        /* Pseudo-element: Style text selection */
+        ::selection {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pseudo-classes & Pseudo-elements</h1>
+    <p>This is a demonstration of pseudo-classes and pseudo-elements.</p>
+    <button>Hover Over Me</button>
+    <br><br>
+    <input type="text" placeholder="Focus on me">
+    <br><br>
+    <ul>
+        <li>First Item (Styled with :first-child)</li>
+        <li>Second Item</li>
+        <li>Last Item (Styled with :last-child)</li>
+    </ul>
+</body>
+</html>

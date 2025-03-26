@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page with Media Queries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+       /*for mobile*/
+      /*  @media (max-width: 600px) {
+            body {
+                background-color: darkred;
+            }
+            h1 {
+                font-size: 20px;
+            }
+        }
+
+        /*for Medium screens like Tablets */
+      /*  @media (min-width: 601px) and (max-width: 1024px) {
+            body {
+                background-color: green;
+            }
+            h1 {
+                font-size: 22px;
+            }
+        }*/
+
+        /* for Large screens (Desktops) */
+        /*@media (min-width: 1025px) {
+            body {
+                background-color: white;
+            }
+            h1 {
+                font-size: 26px;
+            }
+        }*/
+
+        /* Orientation-based styling */
+        @media (orientation: portrait) {
+            body {
+                background-color: yellow;
+            }
+        }
+
+        @media (orientation: landscape) {
+            body {
+                background-color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Responsive Web Design</h1>
+    <p>Resize the window or rotate your device to see the changes!</p>
+</body>
+</html>

@@ -1,0 +1,66 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container{
+	height: 100vh;
+	border: 2px solid red;
+	display: grid;
+	grid-row-gap: 20px;
+	grid-column-gap: 5px;
+	/*grid-template-columns: repeat(4, 1fr);*/
+	
+	/*grid-template-columns define  3 box each of equal size distributed*/
+	grid-template-columns:200px 200px 200px;
+	
+	/* below code grid-template-rowa define the hegiht of the 2 rows  boxes*/
+	grid-template-rows: 150px 150px;
+	
+	/*the boxes after 2 which have not define specific height we can define height for all those boxes like this*/
+	/*grid-auto-rows: 50px;*/
+    
+    /*align the whole content in the center horizontaly*/
+	/*justify-content: center;*/
+   
+   /*align the whole content in the center vertically*/
+	/*align-content: center;*/
+   
+   /*alint the content inside the box in the center*/
+	/*align-items:center ;*/
+
+
+
+
+
+}
+
+.box{
+	border: 2px solid green;
+	padding: 12px;
+}
+
+#box-1 {
+	background-color: bisque;
+    /*align child items in the center horizontaly*/
+	/*justify-self: center;*/
+   
+    /*align child item in the center vertically*/
+	/*align-self: center;*/
+    
+    /*below both code make the single box cover the space upto 4*/
+	/*grid-column-start: 1;
+	 grid-column-end: 4;*/
+
+	 /* we can use below code as a shorthand of above code */
+
+	 /*grid-column: 1 / -1;
+	 grid-row: 1/4;*/
+
+	 /* we can use below code as a shorthand of above code */
+
+	 /*grid-area: 1/1/4/4;*/
+
+
+}

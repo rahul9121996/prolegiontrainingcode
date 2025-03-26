@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Attribute Selectors Demo</title>
+    <style>
+        /* 1. Selects elements that have a specific attribute */
+        input[required] {
+            border: 2px solid red;
+        }
+
+        /* 2. Selects elements where the attribute value exactly matches */
+        input[type="text"] {
+            background-color: lightblue;
+        }
+
+        /* 3. Selects elements where the attribute contains the word in a space-separated list */
+        [class~="btn"] {
+            padding: 10px;
+            background-color: green;
+            color: white;
+        }
+
+        /* 4. Selects elements where the attribute starts with a value followed by a hyphen */
+        [class|="lang"] {
+            font-style: italic;
+        }
+
+        /* 5. Selects elements where the attribute starts with a value */
+        a[href   ="https"] {
+            color: green;
+            font-weight: bold;
+        }
+
+        /* 6. Selects elements where the attribute ends with a value */
+        img[src$=".jpg"] {
+            border: 5px solid blue;
+        }
+
+        /* 7. Selects elements where the attribute contains a substring */
+        input[name*="user"] {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS Attribute Selectors Demo</h2>
+
+    <form>
+        <label>Username:</label>
+        <input type="text" name="username" required><br><br>
+        
+        <label>Password:</label>
+        <input type="password" name="password"><br><br>
+
+        <label>Email:</label>
+        <input type="email" name="user-email"><br><br>
+
+        <button class="btn primary">Submit</button>
+    </form>
+    
+    <h3>Language Sections</h3>
+    <p class="lang-en">This is an English paragraph.</p>
+    <p class="lang-fr">Ceci est un paragraphe en français.</p>
+    
+    <h3>Links</h3>
+    <a href="https://example.com">Secure Link</a><br>
+    <a href="http://example.com">Regular Link</a><br>
+    
+    <h3>Images</h3>
+    <img src="image.jpg" alt="Example Image">
+    <img src="image.png" alt="Another Image">
+</body>
+</html>
