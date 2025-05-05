@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>error handling</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <script>
+
+        //   consloe.log(rahul)   //if an error occured without using try catch the flow of code will die.
+
+          setTimeout(()=>{
+            console.log("hacking wifi... please wait...")
+          },1500)
+
+
+        //   try{
+        //     console.log(rahul)
+        //   }
+        //   catch(err){
+        //      console.log("found error will resolve later.." +err)
+        //   }
+
+        //   if we pass try catch in scheduled code like setTimeout,then try catch wont work.
+        // because try catch works synchronously
+
+        //  try{
+        //   setTimeout(()=>{
+        //     console.log(rahul)
+        //     console.log("fetching username...password...please wait")
+        //   },1500)
+        // }
+        // catch(err){
+        //     console.log("error found" +err)
+        // }
+
+        // we can solve the issue of scheduled code by using try catch inside the setTimeout method
+
+          setTimeout(()=>{
+            try{
+                console.log(rahul)
+            }
+            catch(err){
+                console.log("rahul id not define" +err)
+            }
+            console.log("hacking rahul facebook id....please wait")
+          },1500)
+
+          async function fetchData() {
+            try{
+                let response=await fetch("https://jsonplaceholder.typicode.com/todos/1")
+                let data = await response.json()
+                console.log(data)
+            }
+            catch(err){
+                console.log("fetch error"+err)
+
+            }
+            
+          }
+          fetchData()
+           
+         
+
+
+
+        </script>
+    </body>
+    </head>
+</html>

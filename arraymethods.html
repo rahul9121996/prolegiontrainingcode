@@ -1,0 +1,135 @@
+!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Array methods</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    </head>
+     <body>
+        <script>
+            // array methods:-
+            // Creating an array
+            let numbers = [1, 2, 3, 4, 5];
+
+            // 1. push() - Adds elements to the end of the array
+            numbers.push(6, 7);
+            console.log(numbers); // [1, 2, 3, 4, 5, 6, 7]
+
+           // 2. pop() - Removes the last element 
+            numbers.pop();
+            console.log(numbers); // [1, 2, 3, 4, 5, 6]
+
+           // 3. unshift() - Adds elements to the beginning
+            numbers.unshift(0);
+            console.log(numbers); // [0, 1, 2, 3, 4, 5, 6]
+
+           // 4. shift() - Removes the first element
+            numbers.shift();
+            console.log(numbers); // [1, 2, 3, 4, 5, 6]
+
+           // 5. splice() - Removes/Adds elements at a specific index
+            numbers.splice(2, 2, 9, 10); // Removes 2 elements from index 2 and adds 9, 10
+            console.log(numbers); // [1, 2, 9, 10, 5, 6]
+
+           // 6. slice() - Extracts part of an array
+            let slicedArray = numbers.slice(1, 4);
+            console.log(slicedArray); // [2, 9, 10]
+
+           // 7. indexOf() - Finds the index of a value
+           console.log(numbers.indexOf(10)); // 3
+
+           // 8. includes() - Checks if an element exists in the array
+           console.log(numbers.includes(5)); // true
+
+           // 9. map() - Creates a new array by applying a function to each element
+           let squaredNumbers = numbers.map(num => num * num);
+           console.log(squaredNumbers); // [1, 4, 81, 100, 25, 36]
+
+           // 10. forEach() - Executes a function for each array element
+           numbers.forEach(num => console.log(num * 2)); // Prints doubled values
+
+           // 11. filter() - Creates a new array with elements that match a condition
+           let filteredNumbers = numbers.filter(num => num > 5);
+           console.log(filteredNumbers); // [9, 10, 6]
+
+           // 12. reduce() - Reduces an array to a single value
+           let sum = numbers.reduce((acc, num) => acc + num, 0);
+           console.log(sum); // 33
+
+           // 13. sort() - Sorts elements in ascending order
+           numbers.sort((a, b) => a - b);
+           console.log(numbers); // [1, 2, 5, 6, 9, 10]
+
+           // 14. reverse() - Reverses the order of elements
+           numbers.reverse();
+           console.log(numbers); // [10, 9, 6, 5, 2, 1]
+
+           // 15. join() - Joins array elements into a string
+           let joinedString = numbers.join("-");
+           console.log(joinedString); // "10-9-6-5-2-1"
+
+           // 16. split() - Splits a string into an array
+           let splitArray = "Hello World".split(" ");
+           console.log(splitArray); // ["Hello", "World"]
+           
+           // 17. find() - Finds the first element that matches a condition
+           let found = numbers.find(num => num > 5);
+           console.log(found); // 10
+
+           // 18. findIndex() - Finds the index of the first matching element
+           let foundIndex = numbers.findIndex(num => num > 5);
+           console.log(foundIndex); // 0
+
+           // 19. Array.isArray() - Checks if a variable is an array
+           console.log(Array.isArray(numbers)); // true
+
+
+           // Sample array
+           let numbers1 = [10, 20, 30, 40, 50];
+
+           // 1️⃣ for loop - Iterating with index
+           console.log("Using for loop:");
+           for (let i = 0; i < numbers1.length; i++) {
+             console.log(`Index ${i}: Value ${numbers1[i]}`);
+           }
+
+            //2️⃣ forEach - Iterating directly through values
+           console.log("\nUsing forEach:");
+           numbers1.forEach((value, index) => {
+             console.log(`Index ${index}: Value ${value}`);
+           });
+
+           // 3️⃣ for...of - Iterating through array values
+           console.log("\nUsing for...of loop:");
+           for (let value of numbers1) {
+             console.log(`Value: ${value}`);
+           }
+
+           // 4️⃣ for...in - Iterating through array indices
+           console.log("\nUsing for...in loop:");
+           for (let index in numbers1) {
+             console.log(`Index ${index}: Value ${numbers1[index]}`);
+           }
+
+           // 5️⃣ Array.from - Converting a string into an array
+           let str = "Hello";
+           let charArray = Array.from(str);
+           console.log("\nUsing Array.from:", charArray); // ["H", "e", "l", "l", "o"]
+
+           // 6️⃣ for...in with objects - Iterating over object properties
+           let person = { name: "Alice", age: 25, city: "New York" };
+           console.log("\nUsing for...in on an object:");
+           for (let key in person) {
+             console.log(`${key}: ${person[key]}`);
+}
+
+
+
+
+        </script>
+    </body>
+    </html>
+        
+    

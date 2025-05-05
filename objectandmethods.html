@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Array methods</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    </head>
+    <body>
+        <script>
+    const obj = {
+               name: "Bob",
+          arrowFunc: () => {
+          console .log(this.name);
+       }
+     };
+        obj.arrowFunc(); // Output: undefined (because arrow functions don’t have their own `this`)
+
+        // Creating an object "person"
+const person1 = {
+  name: "John",
+  age: 25,
+
+  // Method to introduce the person using "this"
+  introduce: function () {
+    console.log(`Hi, my name is ${this.name} and I am ${this.age} years old.`);
+  }
+};
+
+// Calling the method
+person1.introduce(); // Output: Hi, my name is John and I am 25 years old.
+
+
+// Define an object with properties and methods
+const person = {
+    name: "Alice",
+    age: 25,
+    greet() {
+        return `Hello, my name is ${this.name}`;
+    }
+};
+
+// Using Object.keys() - Get all property names (keys)
+console.log(Object.keys(person)); // ['name', 'age', 'greet']
+
+// Using Object.values() - Get all values of properties
+console.log(Object.values(person)); // ['Alice', 25, [Function: greet]]
+
+// Using Object.entries() - Get an array of key-value pairs
+console.log(Object.entries(person)); // [['name', 'Alice'], ['age', 25], ['greet', [Function: greet]]]
+
+// Using Object.assign() - Copy properties to another object
+const newPerson = Object.assign({}, person);
+console.log(newPerson); // { name: 'Alice', age: 25, greet: [Function: greet] }
+
+// Using Object.freeze() - Prevent modifications
+Object.freeze(person);
+person.age = 30; // This will not change the value
+console.log(person.age); // 25
+
+// Using Object.seal() - Allow modification but prevent adding/removing properties
+const user = { name: "Bob", city: "New York" };
+Object.seal(user);
+user.city = "Los Angeles"; // Allowed
+user.country = "USA"; // Not allowed
+console.log(user); // { name: 'Bob', city: 'Los Angeles' }
+
+// Using Object.hasOwnProperty() - Check if a property exists
+console.log(person.hasOwnProperty("name")); // true
+console.log(person.hasOwnProperty("gender")); // false 
+
+// Using Object.getPrototypeOf() - Get the prototype of an object
+console.log(Object.getPrototypeOf([])); // [Object: null prototype] {} (Array prototype)
+
+// Using Object.setPrototypeOf() - Set a prototype
+const parent = {
+    sayHello() {
+        return "Hello from parent!";
+    }
+};
+const child = {};
+Object.setPrototypeOf(child, parent);
+console.log(child.sayHello()); // "Hello from parent!"
+
+// Using Object.fromEntries() - Convert key-value pairs into an object
+const entries = [["name", "Charlie"], ["age", 28]];
+const objFromEntries = Object.fromEntries(entries);
+console.log(objFromEntries); // { name: 'Charlie', age: 28 }
+
+// Custom object with methods
+const calculator = {
+    add(a, b) {
+        return a + b;
+    },
+    subtract(a, b) {
+        return a - b;
+    }
+};
+console.log(calculator.add(10, 5)); // 15
+console.log(calculator.subtract(10, 5)); // 5
+
+
+
+        </script>
+    </body>

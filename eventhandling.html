@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Event handling</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <style>
+            .container{
+                background-color: teal;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                width: 450px;
+                padding: 10px; 
+                row-gap: 10px;
+            }
+
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: white;
+                display: flex;
+                flex-shrink: 0;
+                justify-content: center;
+                align-items: center;
+            }
+            .round-border{
+                border-radius: 50%;
+                border: 5px solid black;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="Container" id="container">
+            <div class="box" id="box1" onclick="myfunction()">box1</div>
+            <div class="box" id="box2" onmouseover="myfunction1()">box2</div>
+            <div class="box" id="box3" >box3</div>
+            <div class="box" id="box4">box4</div>
+
+            <form action="#">
+                <input type="text" id="nameInput" onkeypress="keypressEvent()" onkeydown="keypressDown()" onkeyup="keypressUp()" >
+            </form>
+
+            <div id="parent">
+                <button id="child">Click Me</button>
+              </div>
+           
+
+        </div>
+
+
+
+        <script>
+        //1. Event handler:-
+
+        function myfunction(){
+            console.log("box1 clicked");
+        }
+
+        // function myfunction1(){
+        //     console.log("box2 over");
+        // }
+
+        // function keypressEvent(){
+        //     console.log("key was pressed");
+        // }
+
+        // function keypressDown(){
+        //     console.log("key press down")
+        // }
+
+        // function keypressUp(){
+        //     console.log("key press up")
+        // }
+         
+        // 2.Event listners:-
+        // by using event listner we can trigger same event  multiple time on a same id..which is not possible in event handler.
+        // and aslo by using eventlistner we can print or get the event object value.
+        box1=document.getElementById("box1");
+        box1.addEventListener('click',(e)=>{
+            console.log("event object",e);
+            console.log("event type",e.type);
+            console.log("event target",e.target)
+        })
+
+        box1.addEventListener('click',()=>{
+            console.log("same key was pressed again for same event");
+        })
+
+        // event propagation (bubbling and capturing):- 
+
+        // bubbling:-event propogate from the innermost element to the outermost element.
+        // that means firstly child element will call and then parent
+
+        // const parent =document.getElementById("parent");
+        // parent.addEventListener("click",()=>{
+        //     console.log("parent clicked!")
+        // })
+        // const child=document.getElementById("child");
+        // child.addEventListener("click",()=>{
+        //     console.log("chiled clicked")
+        // })
+        
+
+        // capturing:-
+        // event propogate from the outermost element to the innermost so firstly
+        // parent will call then child
+        // by default capturing is false so for triggered capturing we have to enable true inside eventlistner.
+
+        const parent1 =document.getElementById("parent");
+        parent.addEventListener("click",()=>{
+            console.log("parent clicked!")
+        },true);
+        const child1=document.getElementById("child");
+        child.addEventListener("click",()=>{
+            console.log("chiled clicked")
+        },true);
+
+
+
+
+
+
+       
+        
+
+
+        </script>
+    </body>

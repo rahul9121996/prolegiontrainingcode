@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>callback function</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+ <script>
+
+  // 1. Basic Promise Example
+  let promise = new Promise((resolve, reject) => {
+            let success = true;
+            if (success) {
+                resolve("Operation Successful!");
+            } else {
+                reject("Operation Failed!");
+            }
+        });
+        promise
+            .then(result => console.log(result))
+            .catch(error => console.log(error))
+            .finally(() =>   console.log("Promise Settled"));
+
+        // 2. Delayed Execution with setTimeout
+        function delayedMessage() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Hello after 2 seconds!");
+                }, 2000);
+            });
+        }
+        delayedMessage().then(message => console.log(message));
+
+        // 3. Fetching Data Using Promises (Fetch API)
+        fetch("https://jsonplaceholder.typicode.com/todos/1")
+            .then(response => response.json())
+            .then(data => console.log("Fetched Data:", data))
+            .catch(error => console.error("Error:", error));
+
+        // 4. Promise Chaining Example
+        new Promise((resolve) => {
+            setTimeout(() => resolve("Step 1 Completed"), 1000);
+        })
+            .then(result => {
+                console.log(result);
+                return "Step 2 Completed";
+            })
+            .then(result => {
+                console.log(result);
+                return "Step 3 Completed";
+            })
+            .then(result => console.log(result))
+            .catch(error => console.error("Error:", error));
+
+        // 5. Using Promise.all() for Parallel Execution
+        let promise1 = new Promise(resolve => setTimeout(() => resolve("First Done"), 1000));
+        let promise2 = new Promise(resolve => setTimeout(() => resolve("Second Done"), 2000));
+        let promise3 = new Promise(resolve => setTimeout(() => resolve("Third Done"), 1500));
+
+        Promise.all([promise1, promise2, promise3])
+            .then(results => console.log("Promise.all results:", results))
+            .catch(error => console.error("Error:", error));
+
+        // 6. Using Promise.race() to Get the First Completed Promise
+        let promiseA = new Promise(resolve => setTimeout(() => resolve("A Wins!"), 2000));
+        let promiseB = new Promise(resolve => setTimeout(() => resolve("B Wins!"), 1000));
+
+        Promise.race([promiseA, promiseB])
+            .then(result => console.log("Promise.race result:", result))
+            .catch(error => console.error("Error:", error));
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

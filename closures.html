@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body> 
+    <Script>
+        // function init(){
+        //     var name='mozilla'; //name is a local variable created by  init
+        //     function displayName(){
+        //         //displayName() is the inner function, a closure
+        //         console.log(name); //use variable declared in the parent function
+        //     }
+        //     name = "Harry"
+        //     return displayName;
+        // }
+        // let c = init();
+        // c()
+
+        function returnFunc() {
+            const x=()=>{
+                let a=1
+                console.log(a)
+
+                const y=()=>{
+                    // let a=2
+                    console.log(a)
+
+                    const z=()=>{
+                        // let a=3
+                        console.log(a)
+                    }
+                    z()
+                }
+                a=999
+
+                y()
+            }
+           return x
+        }
+
+        let a=returnFunc()
+        a()
+
+    </Script>
+</body>
+</html>

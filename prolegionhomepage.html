@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
         <title>Responsive Navbar</title>
+        
     </head>
+
     <body>
         <nav class="bg-white shadow-md w-full fixed top-0 z-50">
             <div class="max-w-[100vw] mx-auto px-4 lg:px-12">
@@ -60,27 +62,36 @@
                     </div>
                 </div>
 
-            </div>
-
-            <div id="mobile-menu"
-                class="hidden lg:hidden flex flex-col space-y-4 py-4 bg-white w-full shadow-md">
-                <a href="#"
-                    class="text-gray-700 hover:text-blue-500 font-bold">Solutions</a>
-                <a href="#"
-                    class="text-gray-700 hover:text-blue-500 font-bold">Marketplace</a>
-                <a href="#"
-                    class="text-gray-700 hover:text-blue-500 font-bold">Intellica</a>
-                <a href="#"
-                    class="text-gray-700 hover:text-blue-500 font-bold">Pricing</a>
-                <a href="#"
-                    class="text-gray-700 hover:text-blue-500 font-bold">Blog</a>
-                <a href="#"
-                    class="text-gray-700 hover:text-blue-500 font-bold">About</a>
-                <a href="#"
-                    class="text-gray-700 hover:text-blue-500 font-bold">Support</a>
-            </div>
-
+            </div>    
         </nav>
+
+         <!-- Side Drawer -->
+    <div id="side-drawer" class="fixed top-0 left-0 w-full h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="p-4">
+            <button id="close-btn" class="text-gray-900 focus:outline-none mb-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>  
+                </svg>
+            </button>
+
+            <div class="flex justify-between items-center mb-4 border-b-2 border-blue-500 pb-2">
+                <a href="#" id="login-btn" class="text-gray-700 font-bold">Login</a>
+                <a href="#" class="bg-white font-bold text-blue-500 border-2 border-blue-500 rounded-lg px-4 py-1 hover:bg-blue-600 hover:text-white">Sign Up</a>
+            </div>
+
+            <div class="flex flex-col space-y-4">
+                
+                <a href="#" class="text-gray-700 hover:text-blue-500 font-bold">Solutions</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500 font-bold">Marketplace</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500 font-bold">Intellica</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500 font-bold">Pricing</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500 font-bold">Blog</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500 font-bold">About</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500 font-bold">Support</a>
+
+            </div>
+        </div>
+    </div>
 
         <div id="center-logo"
             class="fixed inset-0 flex justify-center items-center bg-white">
@@ -106,11 +117,11 @@
                         back</h2>
                 </div>
                 <form>
-                    <div class="mb-4">
+                    <div class="mb-4"> 
                         <!-- <label class="block text-gray-900 font-semibold after:content-['*'] after:text-black">
                             Email
-                        </label> -->
-                        <label
+                        </label>  -->
+                       <label
                             class="block font-semibold text-gray-900">Email*</label>
                         <input type="email"
                             class="w-full px-4 py-2 border rounded-lg focus:outline-none bg-blue-100 "
@@ -134,44 +145,69 @@
                         <a href="#"
                             class="text-blue-500 hover:underline ">Forgot
                             password?</a>
-                    </div>
-
+                    </div> 
                 </form>
 
             </div>
         </div>
 
         <script>
-        const loginBtn = document.getElementById('login-btn');
-        const loginModal = document.getElementById('login-modal');
-        const backbutton = document.getElementById('back-button');
-        const centerLogo = document.getElementById('center-logo');
+const loginBtn = document.getElementById('login-btn');
+const loginModal = document.getElementById('login-modal');
+const backbutton = document.getElementById('back-button');
+const centerLogo = document.getElementById('center-logo');
+const sideDrawer = document.getElementById('side-drawer');
+const menuBtn = document.getElementById('menu-btn');
+const closeBtn = document.getElementById('close-btn');
 
-        loginBtn.addEventListener('click', (event) => {
-            event.preventDefault(); 
-            loginModal.classList.remove('hidden');
-            centerLogo.classList.add('hidden');
-        });
-  
-        backbutton.addEventListener('click', () => {
-            loginModal.classList.add('hidden');
-            centerLogo.classList.remove('hidden');
-        });
+// Toggle Side Drawer
+menuBtn.addEventListener('click', (event) => {
+    event.stopPropagation();  // Prevents the event from bubbling up and closing immediately
+    sideDrawer.classList.toggle('-translate-x-full');
+});
 
-        window.addEventListener('click', (event) => {
-            if(event.target === loginModal) {
-                loginModal.classList.add('hidden');
-                centerLogo.classList.remove('hidden');
-            }
-        });
+// Close side drawer when clicking the close button
+closeBtn.addEventListener('click', () => {
+    sideDrawer.classList.add('-translate-x-full');
+});
 
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-            
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+// Close side drawer when clicking outside
+window.addEventListener('click', (event) => {
+    if (!sideDrawer.contains(event.target) && !menuBtn.contains(event.target)) {
+        sideDrawer.classList.add('-translate-x-full');
+    }
+});
+
+// Prevent menu click from closing drawer
+sideDrawer.addEventListener('click', (event) => {
+    event.stopPropagation();
+});
+
+// Show login modal
+loginBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    loginModal.classList.remove('hidden');
+    centerLogo.classList.add('hidden');
+});
+
+// Close login modal
+backbutton.addEventListener('click', () => {
+    loginModal.classList.add('hidden');
+    centerLogo.classList.remove('hidden');
+});
+
+// Close login modal when clicking outside
+window.addEventListener('click', (event) => {
+    if (event.target === loginModal) {
+        loginModal.classList.add('hidden');
+        centerLogo.classList.remove('hidden');
+    }
+});
+
     </script>
 
     </body>
-</html>
+</html> 
+
+
+

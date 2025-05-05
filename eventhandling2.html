@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Handling</title>
+</head>
+<body>
+    <h2>JavaScript Event Handling Examples</h2>
+
+    <!-- Inline Event Handling -->
+    <button onclick="alert('Button Clicked!')">Inline Event Handling</button>
+    <br><br>
+
+    <!-- Traditional Event Handling -->
+    <button id="traditionalBtn">Traditional Event Handling</button>
+    <br><br>
+
+    <!-- Modern Event Handling using addEventListener -->
+    <button id="modernBtn">Modern Event Handling</button>
+    <br><br>
+
+    <!-- Removing Event Listener Example -->
+    <button id="removeEventBtn">Remove Event Listener</button>
+    <br><br>
+
+    <!-- Event Object Example -->
+    <button id="eventObjectBtn">Event Object Example</button>
+    <br><br>
+
+    <!-- Event Propagation (Bubbling & Capturing) Example -->
+    <div id="parent" style="padding:20px; background-color:lightgrey;">
+        <button id="child">Event Bubbling Example</button>
+    </div>
+
+    <script>
+        // Traditional Event Handling (DOM Level 0)
+        document.getElementById("traditionalBtn").onclick = function() {
+            alert("Traditional Event Handler Triggered!");
+        };
+
+        // Modern Event Handling (DOM Level 2) using addEventListener
+        let modernBtn = document.getElementById("modernBtn");
+        modernBtn.addEventListener("click", function() {
+            alert("Modern Event Listener Triggered!");
+        });
+        modernBtn.addEventListener("click", function() {
+            console.log("This is a second event handler for the same event!");
+        });
+
+        // Removing Event Listener
+        let removeEventBtn = document.getElementById("removeEventBtn");
+        function removeEvent() {
+            alert("This event listener will be removed after 5 seconds!");
+        }
+        removeEventBtn.addEventListener("click", removeEvent);
+        setTimeout(() => {
+            removeEventBtn.removeEventListener("click", removeEvent);
+        }, 5000);
+
+        // Event Object Example
+        document.getElementById("eventObjectBtn").addEventListener("click", function(event) {
+            console.log("Event Type:", event.type);
+            console.log("Event Target:", event.target);
+        });
+
+        // Event Bubbling Example (Child to Parent)
+        document.getElementById("parent").addEventListener("click", function() {
+            console.log("Parent Div Clicked! (Bubbling)");
+        });
+        document.getElementById("child").addEventListener("click", function() {
+            console.log("Child Button Clicked! (Bubbling)");
+        });
+
+        // Event Capturing Example (Parent to Child)
+        document.getElementById("parent").addEventListener(
+            "click",
+            function() {
+                console.log("Parent Div Clicked! (Capturing)");
+            },
+            true
+        );
+        document.getElementById("child").addEventListener(
+            "click",
+            function() {
+                console.log("Child Button Clicked! (Capturing)");
+            },
+            true
+        );
+    </script>
+</body>
+</html>

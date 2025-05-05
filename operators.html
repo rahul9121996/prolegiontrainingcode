@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    
+</head>
+<body> 
+    <script>
+  // JavaScript Operators Demonstration
+
+// 1. Arithmetic Operators
+// These operators perform mathematical calculations.
+let a = 10, b = 5; // Assign values to variables
+console.log("Arithmetic Operators:");
+console.log("Addition: ", a + b); // Adds a and b (10 + 5 = 15)
+console.log("Subtraction: ", a - b); // Subtracts b from a (10 - 5 = 5)
+console.log("Multiplication: ", a * b); // Multiplies a and b (10 * 5 = 50)
+console.log("Division: ", a / b); // Divides a by b (10 / 5 = 2)
+console.log("Modulus (Remainder): ", a % b); // Remainder when a is divided by b (10 % 5 = 0)
+console.log("Exponentiation: ", a ** b); // Raises a to the power of b (10^5)
+a++; // Increment a by 1 (now 11)
+b--; // Decrement b by 1 (now 4)
+console.log("After Increment and Decrement: a =", a, ", b =", b); 
+
+// 2. Assignment Operators
+// These operators assign values to variables.
+let x = 10; // Assign 10 to x
+console.log("\nAssignment Operators:");
+x += 5; // x = x + 5 (15)
+console.log("x += 5: ", x);
+x -= 3; // x = x - 3 (12)
+console.log("x -= 3: ", x);
+x *= 2; // x = x * 2 (24)
+console.log("x *= 2: ", x);
+x /= 4; // x = x / 4 (6)
+console.log("x /= 4: ", x);
+x %= 3; // x = x % 3 (0)
+console.log("x %= 3: ", x);
+x **= 2; // x = x ** 2 (0^2 = 0)
+console.log("x **= 2: ", x);
+
+// 3. Comparison Operators
+// These operators compare two values and return true or false.
+console.log("\nComparison Operators:");
+console.log("10 == '10': ", 10 == "10"); // Checks only value, returns true
+console.log("10 === '10': ", 10 === "10"); // Checks value and type, returns false
+console.log("10 != 5: ", 10 != 5); // Checks if 10 is not equal to 5, returns true
+console.log("10 !== '10': ", 10 !== "10"); // Strict inequality, returns true
+console.log("10 > 5: ", 10 > 5); // Returns true
+console.log("10 < 5: ", 10 < 5); // Returns false
+console.log("10 >= 10: ", 10 >= 10); // Returns true
+console.log("10 <= 5: ", 10 <= 5); // Returns false
+
+// 4. Logical Operators
+// These operators work with Boolean values (true/false).
+console.log("\nLogical Operators:");
+console.log("true AND false: ", true && false); // Returns false (both conditions must be true)
+console.log("true OR false: ", true || false); // Returns true (at least one condition must be true)
+console.log("NOT true: ", !true); // Returns false (negates the value)
+
+// 5. Bitwise Operators
+// These operators work at the binary level.
+console.log("\nBitwise Operators:");
+console.log("Bitwise AND (5 & 1): ", 5 & 1); // 0101 & 0001 = 0001 (1)
+console.log("Bitwise OR (5 | 1): ", 5 | 1); // 0101 | 0001 = 0101 (5)
+console.log("Bitwise XOR (5 ^ 1): ", 5 ^ 1); // 0101 ^ 0001 = 0100 (4)
+console.log("Bitwise NOT (~5): ", ~5); // ~0000 0000 0000 0000 0000 0000 0000 0101 = -6
+console.log("Left Shift (5 << 1): ", 5 << 1); // 0101 << 1 = 1010 (10)
+console.log("Right Shift (5 >> 1): ", 5 >> 1); // 0101 >> 1 = 0010 (2)
+console.log("Unsigned Right Shift (-5 >>> 1): ", -5 >>> 1); // Treats -5 as unsigned, gives large positive number
+
+// 6. Ternary Operator
+// This is a shorthand for an if-else condition.
+console.log("\nTernary Operator:");
+let age = 20;
+let result = (age >= 18) ? "Adult" : "Minor"; // If age >= 18, return "Adult", else return "Minor"
+console.log("Age:", age, ", Status:", result);
+
+// 7. Type Operators
+// These operators help determine the type of variables.
+console.log("\nType Operators:");
+console.log("typeof 10: ", typeof 10); // Returns "number"
+console.log("typeof 'Hello': ", typeof "Hello"); // Returns "string"
+console.log("typeof true: ", typeof true); // Returns "boolean"
+console.log("typeof {}: ", typeof {}); // Returns "object"
+console.log("typeof []: ", typeof []); // Returns "object" (Array is a type of object)
+console.log("typeof null: ", typeof null); // Returns "object" (a known JavaScript bug)
+console.log("typeof undefined: ", typeof undefined); // Returns "undefined"
+console.log("[] instanceof Array: ", [] instanceof Array); // Checks if object is an array, returns true
+
+// 8. Nullish Coalescing Operator (??)
+// This operator returns the right-hand value if the left-hand value is null or undefined.
+console.log("\nNullish Coalescing Operator:");
+let name = null;
+console.log("name ?? 'Guest': ", name ?? "Guest"); // If name is null, return "Guest"
+
+// 9. Optional Chaining Operator (?.)
+// This operator prevents errors when accessing undefined properties.
+console.log("\nOptional Chaining Operator:");
+let user = {}; // Empty object
+console.log("user?.profile?.name: ", user?.profile?.name); // Instead of an error, returns undefined
+
+    </script>   
+</body>
+</html>

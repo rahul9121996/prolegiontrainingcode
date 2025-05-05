@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>memoization</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <script>
+        // memoization is an optimization technique used to speed up function execution by caching previously
+        // computed results.when a function is called with the same input the cached result is returned instead of recomputing it.
+
+            
+            const calc= (n)=>{
+                let sum=0;
+                for(let i=0;i<=n;i++){
+                    sum+=i;
+                }
+                return sum;
+
+            }  
+            
+            const memoize=(fun)=>{  //fun is a callback function
+
+                let cache={};  //  Cache object for storing computed results
+                return function(...args){  //  Accepts any number of arguments
+                    let n=args[0];           // Extract the first argument
+                    if(n in cache){              //if result in cache then this code will execute or return result
+                        console.log("cache")
+                        return cache[n];
+                    }else{
+                        console.log("calculating first time")
+                        let result=fun(n);
+                        cache[n]=result;     //if result is not in cache then computing it
+                        return result;
+                    }
+                }
+
+            }
+           console.time();
+           const efficient= memoize(calc); 
+           //The first call to efficient(5) will compute the sum and store it in cache.
+           console.log(efficient(5))
+           console.timeEnd();
+           
+
+
+           console.time();
+        // If efficient(5) is called again, it fetches from cache, making it faster.
+           console.log(efficient(5))
+           console.timeEnd();
+
+
+
+//2nd example :-
+        
+function memoize(fn) {
+const cache = {};
+return function(...args) {
+    const key = JSON.stringify(args); // Convert arguments into a string key
+    if (cache[key]) {
+        console.log("Fetching from cache:", key);
+        return cache[key]; // Return cached result
+    } else {
+        console.log("Calculating result for:", key);
+        const result = fn(...args);
+        cache[key] = result; // Store result in cache
+        return result;
+    }
+};}
+
+// Fibonacci function (expensive operation)
+function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Memoized Fibonacci
+const memoizedFibonacci = memoize(fibonacci);
+
+console.log(memoizedFibonacci(10)); // Calculates and stores in cache
+console.log(memoizedFibonacci(10)); // Retrieves from cache
+
+           
+
+
+     
+
+          
+           
+
+
+
+                
+        
+            
+
+
+        </script>
+    </body>
+</html>

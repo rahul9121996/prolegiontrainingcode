@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Destructuring and spread operator</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    </head>
+    <body>
+        <script>
+            arr=[1,2,3,4,5,6]
+            const [a,b,...c]=arr
+            console.log(a,b,c)
+
+// 1. Array Destructuring with Default Values
+const fruits = ["Apple", "Banana"];
+const [first, second, third = "Orange"] = fruits; 
+console.log(first);  // Apple
+console.log(second); // Banana
+console.log(third);  // Orange (default value)
+
+// 2. Swapping Variables Using Array Destructuring
+let x = 10, y = 20;
+[x, y] = [y, x]; // Swap values without temp variable
+console.log(x); // 20
+console.log(y); // 10
+
+// 3. Nested Object Destructuring
+const user = { name: "Alice", address: { city: "New York", zip: 10001 } };
+const { name, address: { city, zip } } = user;
+console.log(name); // Alice
+console.log(city); // New York
+console.log(zip);  // 10001
+
+// 4. Function Parameter Destructuring
+const person = { firstName: "John", lastName: "Doe", age: 30 };
+function greet({ firstName, lastName }) {
+  console.log(`Hello, ${firstName} ${lastName}!`);
+}
+greet(person); // Hello, John Doe!
+
+// 5. Using Spread Operator to Copy and Merge Arrays
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combinedArray = [...arr1, ...arr2];
+console.log(combinedArray); // [1, 2, 3, 4, 5, 6]
+
+// 6. Merging Objects Using Spread Operator
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+const mergedObj = { ...obj1, ...obj2 };
+console.log(mergedObj); // { a: 1, b: 2, c: 3, d: 4 }
+
+// 7. Using Rest with Object Destructuring
+const student = { name: "Emma", age: 22, grade: "A", country: "USA" };
+const { name: studentName, ...rest } = student;
+console.log(studentName);  // Emma
+console.log(rest);  // { age: 22, grade: 'A', country: 'USA' }
+
+// 8. Function Arguments Using Spread Operator
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10
+console.log(sum(10, 20, 30)); // 60
+
+// 9. Cloning an Object Without Affecting the Original
+const original = { name: "Leo", age: 25 };
+const clone = { ...original };
+clone.age = 30;
+console.log(original); // { name: "Leo", age: 25 }
+console.log(clone);    // { name: "Leo", age: 30 }
+
+// 10. Filtering Out Properties Using Object Destructuring & Rest
+const book = { title: "1984", author: "George Orwell", pages: 328 };
+const { title, ...details } = book;
+console.log(title);   // "1984"
+console.log(details); // { author: "George Orwell", pages: 328 }
+
+
+        </script>
+    </body>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Drawer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 h-screen ">
+    <div class="flex h-full">
+
+        <div class="fixed top-0 left-0 w-full bg-gray-100  py-3 px-6 flex justify-end items-center">
+         
+          
+    
+            
+            <div class="flex items-center space-x-4">
+
+                <a href="#" class="text-blue-500 font-semibold"> My Profile</a>
+              
+                <div class="relative">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1827/1827314.png" 
+                         alt="Notification" 
+                         class="w-8 h-8 rounded-full cursor-pointer">
+                </div>
+    
+                
+                <img src="https://randomuser.me/api/portraits/men/50.jpg" 
+                     alt="Profile" 
+                     class="w-10 h-10 rounded-full border-2 border-gray-300 cursor-pointer">
+            </div>
+        </div>
+    
+        <!-- Sidebar -->
+        <div class="group relative h-full w-16 hover:w-60 transition-all duration-300 bg-white text-gray-800 flex flex-col py-4 shadow-lg">
+            
+            <div class="relative py-4 mb-6">
+                <!-- Small Logo (Visible by Default, Centered Above Menu) -->
+                <img src="https://prolegion-assets.s3.ap-south-1.amazonaws.com/Assets/landing/favicon+png-01.png"
+                    alt="Prolegion Short Logo"
+                    class="w-6 h-6 absolute left-1/2 transform -translate-x-1/2 transition-opacity duration-300 group-hover:opacity-0">
+                
+                <!-- Full Logo (Hidden by Default, Shown on Hover) -->
+                <img src="https://www.prolegion.com/_next/image?url=https%3A%2F%2Fprolegion-assets.s3.ap-south-1.amazonaws.com%2FAssets%2FProlegion_Logo_New.png&w=1920&q=75"
+                    alt="Prolegion Full Logo"
+                    class="w-40 h-8 mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            </div>
+            
+            
+
+            <!-- Menu Items -->
+            <nav class="flex flex-col space-y-4 px-2">
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-200 rounded-lg">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1828/1828673.png" alt="Dashboard" class="w-6 h-6">
+                    <span class="ml-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Dashboard</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-200 rounded-lg">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1940/1940995.png" alt="Resume Builder" class="w-6 h-6">
+                    <span class="ml-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Resume Builder</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-200 rounded-lg">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3066/3066585.png" alt="Intellica Interview" class="w-6 h-6">
+                    <span class="ml-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Intellica Interview</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-200 rounded-lg">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2331/2331947.png" alt="Marketplace" class="w-6 h-6">
+                    <span class="ml-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Marketplace</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-200 rounded-lg">
+                    <img src="https://cdn-icons-png.flaticon.com/128/4281/4281787.png" alt="Timesheets" class="w-6 h-6">
+                    <span class="ml-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Timesheets</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-200 rounded-lg">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3106/3106771.png" alt="My Workroom" class="w-6 h-6">
+                    <span class="ml-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">My Workroom</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-200 rounded-lg">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="Chat" class="w-6 h-6">
+                    <span class="ml-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Chat</span>
+                </a>
+                <hr class="my-2">
+
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-200 rounded-lg">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3176/3176369.png" alt="Task" class="w-6 h-6">
+                    <span class="ml-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Task</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-200 rounded-lg">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3588/3588297.png" alt="Document" class="w-6 h-6">
+                    <span class="ml-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Document</span>
+                </a>
+                <hr class="my-2">
+
+                <div class="m-1 mb-20 cursor-pointer m-4 mt-2 border rounded-lg flex flex-col item-center justify-center">
+                    <div class="P-2 text-center">
+                        <img class="w-[50%] mx-auto" src="https://prolegion-assets.s3.ap-south-1.amazonaws.com/Assets/Layer+1+(2).png">
+                        <!-- <h1 class="mt-4 font-semibold text-md">Need help?</h1>
+                        <p class="text-xs text-center text-gray-500">
+                            boost the efficiency of your IT workforce with prolegion.
+                        </p> -->
+    
+                    </div>
+    
+                </div>
+            </nav>
+           
+        </div>
+        <!-- main content area -->
+
+        <div class="flex-grow p-6 pt-16 mt-10">
+            <div class="mb-6 ml-12">
+                <h2 class="font-bold text-4xl">Overview</h2>
+            </div>
+            <!-- Card Container -->
+            <div class="bg-blue-500 text-white p-6 rounded-lg shadow-lg w-full max-w-6xl mx-auto flex justify-between items-center">
+                <!-- Left Side: Circle + Text on One Line, Paragraph Below -->
+                <div>
+                    <!-- First Row: Circle and Heading in One Line -->
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 flex items-center justify-center border-4 border-white rounded-full text-white font-bold text-lg">
+                            50%
+                        </div>
+                        <h2 class="text-lg font-semibold">Complete your profile to boost career opportunities</h2>
+                    </div>
+        
+                    <!-- Second Row: Paragraph Below -->
+                    <p class="text-sm opacity-90 mt-2">
+                        Stand out from the crowd — get showcased at the top and unlock new possibilities.
+                    </p>
+                </div>
+        
+                <!-- Right Side: Button -->
+                <button class="bg-white text-black px-10 py-2 rounded-lg font-semibold hover:bg-gray-200">
+                    Complete now
+                </button>
+            </div>
+
+
+            <div class="bg-white text-gray-900 p-6 rounded-lg shadow-lg w-full justify-center max-w-6xl mx-auto mt-6 flex flex-col lg:flex-row items-center">
+                <!-- Left Side: Find a Job Section -->
+                <div class="lg:w-1/2 w-full flex flex-col justify-center md:w-[200px] lg:w-[400px] item-start p-5  space-y-3"> 
+                    <div class="flex items-center  space-x-4">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Job Logo" class="w-10 h-10">
+                        <h2 class="text-2xl font-bold">Find a Job</h2>
+                    </div>
+                    <p class="text-sm opacity-90">
+                        Apply to top jobs effortlessly. Get real-time updates and track your applications seamlessly.
+                    </p>
+                    <button class="bg-blue-500 text-white px-6 py-2  rounded-lg font-bold hover:bg-blue-600 ">
+                        Apply for job
+                    </button>
+                </div> 
+        
+                <!-- Vertical Divider -->
+                <div class="w-px bg-gray-300 h-40 mx-6"></div>
+        
+                <!-- Right Side: AI Mock Interview Section -->
+                 <div class="lg:w-1/2 w-full flex-col items-center  md:w-[200px] lg:w-[400px]  space-y-3"> 
+                    <div class="flex items-center space-x-4">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="AI Interview Logo" class="w-10 h-10">
+                        <h2 class="text-2xl font-bold">AI Mock Interview</h2>
+                    </div>
+                    <div class="pl-20">
+                    <p class="text-sm  opacity-90">
+                        Assess your skills, communication, and confidence in real-time. Get instant feedback and improve your interview performance.
+                    </p>
+                </div>
+                    <button class="bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600  ">
+                        Try a Free Mock Interview
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div> 
+
+       
+
+
+
+        <!-- <div class="w-full">
+            <div class="flex space-x-6 mb-8 w-full lg:h-64">
+                <div class="flex flex-col lg:flex-row bg-white lg:p-6 p-2 rounded-xl shadow-md w-full min-h-[200px]">
+                    <div class="flex justify-center w-full lg:w-1/2">
+                        <div class="flex flex-col justify-center md:w-[200px] lg:w-[400px] items-start p-5">
+                            <div class="flex flex-row justify-center items-center">
+                                <div class="flex justify-center items-center w-12 h-12 p-3 text-white bg-[#46BFE6] rounded-full">
+                                    <svg width="100%" height="100%" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.6439 2.63074H15.2856V2.09761C15.2856 1.58439 15.0839 1.09201 14.7247 0.728826C14.3654 0.365615 13.878 0.161395 13.3695 0.161395H6.6526C6.14412 0.161395 5.65666 0.365615 5.2974 0.728826C4.93816 1.09201 4.73651 1.58439 4.73651 2.09761V2.63074H2.37822C1.78877 2.63074 1.22365 2.86748 0.807126 3.28858C0.390636 3.70964 0.156817 4.28054 0.156817 4.87563V15.3703C0.156817 15.665 0.214226 15.9568 0.325788 16.2291C0.43735 16.5014 0.600894 16.7489 0.807126 16.9574C1.01336 17.1659 1.25824 17.3313 1.52782 17.4442C1.7974 17.5571 2.08637 17.6152 2.37822 17.6152H17.6439C17.9357 17.6152 18.2247 17.5571 18.4943 17.4442C18.7638 17.3313 19.0087 17.1659 19.215 16.9574C19.4212 16.7489 19.5847 16.5014 19.6963 16.2291C19.8079 15.9568 19.8653 15.665 19.8653 15.3703V4.87563C19.8653 4.28054 19.6315 3.70964 19.215 3.28858C18.7984 2.86748 18.2333 2.63074 17.6439 2.63074ZM6.12618 2.09761C6.12618 1.95592 6.18187 1.82022 6.28069 1.72031C6.37949 1.62043 6.51329 1.56449 6.6526 1.56449H13.3695C13.5088 1.56449 13.6426 1.62043 13.7414 1.72031C13.8402 1.82022 13.8959 1.95592 13.8959 2.09761V2.63074H6.12618V2.09761ZM2.37822 4.03383H17.6439C17.8642 4.03383 18.0756 4.1223 18.2317 4.28006C18.3877 4.43786 18.4756 4.65207 18.4756 4.87563V8.18676H13.1484V7.0363C13.1484 6.85054 13.0754 6.6722 12.9452 6.54056C12.815 6.40889 12.6381 6.33476 12.4535 6.33476H7.56854C7.38396 6.33476 7.20713 6.40889 7.07689 6.54056C6.94669 6.67219 6.8737 6.85054 6.8737 7.0363V8.18676H1.54649V4.87563C1.54649 4.65207 1.63434 4.43786 1.79042 4.28006C1.94647 4.1223 2.15793 4.03383 2.37822 4.03383ZM11.7587 7.73785V10.0388H8.26338V7.73785H11.7587ZM17.6439 16.2121H2.37822C2.15793 16.2121 1.94647 16.1237 1.79042 15.9659C1.63434 15.8081 1.54649 15.5939 1.54649 15.3703V9.58986H6.8737V10.7403C6.8737 10.9261 6.94669 11.1044 7.07689 11.2361C7.20713 11.3677 7.38396 11.4419 7.56854 11.4419H12.4535C12.6381 11.4419 12.815 11.3677 12.9452 11.2361C13.0754 11.1044 13.1484 10.9261 13.1484 10.7403V9.58986H18.4756V15.3703C18.4756 15.5939 18.3877 15.8081 18.2317 15.9659C18.0756 16.1237 17.8642 16.2121 17.6439 16.2121Z" fill="currentColor" stroke="white" stroke-width="0.168422">
+
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="text-2xl font-semibold block mx-2 text-black">Find a Job</div>
+                            </div>
+                            <div class="text-sm mb-4">
+                                <div class="text-sm flex flex-row w-full items-center gap-1">
+                                    <div class="mt-2">Apply to top jobs effortlessly. Get real-time updates and track your applications seamlessly.</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center w-auto !w-full">
+                                <button type="button" class="relative overflow-hidden hover:shadow-lg flex justify-center flex-row text-white bg-[#3985B6] hover:bg-[#3985B6] focus:bg-[#3985B6] items-center gap-1 border whitespace-nowrap rounded-lg text-sm h-[42px] px-2 py-2 text-center mt-2 !w-full 
+            border-[#3985B6] cursor-pointer">
+            <span class="relative z-10 flex items-center gap-1">Apply for job</span>
+        </button>
+    </div>
+</div>
+</div>
+<div class="border-l border-gray-300 ml-20 mr-24 h-full hidden lg:block">
+
+</div>
+<div class="flex justify-center w-full lg:w-1/2">
+    <div class="flex flex-col justify-center items-start md:w-[200px] lg:w-[400px] p-5">
+        <div class="flex flex-row space-x-2 justify-center items-center">
+            <div class="flex justify-center items-center w-12 h-12 p-3 text-white bg-[#46BFE6] rounded-full">
+                <svg width="100%" height="100%" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.82636 12.7246L3.82638 12.7246L3.829 12.7228L7.54672 10.1361H11.0738V14.0855C11.0738 15.4733 12.1998 16.602 13.5855 16.602H18.6422L22.3587 19.1887L22.3587 19.1887L22.3614 19.1905C22.3849 19.2063 22.4112 19.2213 22.4392 19.2338C22.7744 19.393 23.144 19.3175 23.4124 19.1263C23.6798 18.9358 23.8711 18.6131 23.8306 18.2471L23.7565 16.5733C24.9653 16.3919 25.8933 15.3444 25.8933 14.0843V9.43927C25.8933 8.05153 24.7676 6.92273 23.3818 6.92273H15.1139V2.97333C15.1139 1.58678 13.988 0.456823 12.6022 0.456823H2.805C1.41922 0.456823 0.293248 1.5856 0.293248 2.97333V7.61958C0.293248 8.87987 1.22261 9.92608 2.4313 10.1074L2.35831 11.7683C2.31682 12.1391 2.50352 12.4651 2.7712 12.6582C3.03985 12.852 3.40972 12.926 3.74796 12.7681C3.77616 12.7556 3.80266 12.7405 3.82636 12.7246ZM7.12655 9.2608L7.12653 9.26077L7.12386 9.26262L3.3504 11.8899C3.33405 11.89 3.32631 11.887 3.32396 11.8858C3.32108 11.8819 3.3129 11.8665 3.31279 11.8261L3.40777 9.68C3.41967 9.49305 3.32754 9.34968 3.19922 9.26581C3.08061 9.18828 2.93175 9.16025 2.79519 9.17768C1.94259 9.17158 1.25047 8.47465 1.25047 7.61939V7.61935L1.24931 2.97314C1.24931 2.97312 1.24931 2.97311 1.24931 2.9731C1.24934 2.11408 1.94755 1.41481 2.80531 1.41481H12.6025C13.459 1.41481 14.1573 2.11403 14.1573 2.97314V6.92254H13.5849C12.2867 6.92254 11.2254 7.91405 11.0941 9.17755L7.3966 9.17774C7.29858 9.17774 7.20477 9.20854 7.12655 9.2608ZM3.32495 11.887C3.32492 11.887 3.32467 11.8868 3.32427 11.8862C3.32477 11.8867 3.32497 11.887 3.32495 11.887ZM24.9379 14.0841V14.0842C24.9379 14.9434 24.2412 15.6419 23.3862 15.6436C23.326 15.6414 23.2444 15.6398 23.1634 15.6557C23.0798 15.6721 22.9844 15.7094 22.91 15.7942C22.8208 15.8889 22.7748 16.0141 22.7817 16.1438C22.7817 16.1441 22.7817 16.1444 22.7817 16.1447L22.8777 18.2994C22.8761 18.3335 22.8687 18.3466 22.8661 18.35C22.864 18.3511 22.8561 18.3544 22.8387 18.3544L19.0656 15.7274L19.065 15.727C18.984 15.6711 18.889 15.6425 18.7929 15.6425H13.587C12.7293 15.6425 12.031 14.9433 12.031 14.083V9.43794C12.031 8.57767 12.7293 7.87845 13.587 7.87845H23.3842C24.2407 7.87845 24.939 8.57757 24.9391 9.43789C24.9391 9.43791 24.9391 9.43792 24.9391 9.43794L24.9379 14.0841ZM3.8338 3.127L3.83332 3.127C3.68563 3.12743 3.5632 3.18615 3.47962 3.28188C3.39888 3.37436 3.36185 3.49241 3.36143 3.60488C3.36101 3.71735 3.39718 3.83594 3.47816 3.92896C3.56202 4.02529 3.68505 4.0836 3.83332 4.08402H3.8338L11.6408 4.08402L11.6412 4.08402C11.7889 4.08359 11.9114 4.02486 11.9949 3.92903C12.0755 3.83648 12.1124 3.71839 12.1127 3.60599C12.113 3.49358 12.0768 3.37509 11.996 3.28213C11.9122 3.18585 11.7894 3.12743 11.6412 3.127H11.6408L3.8338 3.127ZM3.8338 4.95613L3.83332 4.95613C3.68548 4.95656 3.5629 5.01518 3.47924 5.1111C3.39843 5.20374 3.36164 5.32196 3.36143 5.43447C3.36122 5.54699 3.39758 5.66546 3.47837 5.75845C3.562 5.85472 3.68472 5.91347 3.83284 5.91432H3.83384L8.66213 5.91315L8.66257 5.91315C8.81028 5.91273 8.93269 5.85399 9.01621 5.75816C9.09687 5.66561 9.13371 5.54752 9.13403 5.43512C9.13434 5.32271 9.09814 5.20422 9.0173 5.11126C8.93357 5.01499 8.81071 4.95656 8.66257 4.95613H8.66209L3.8338 4.95613ZM8.6609 7.74347L8.66139 7.74347C8.80922 7.74305 8.93179 7.68443 9.01545 7.58855C9.09625 7.49593 9.13306 7.37775 9.13328 7.26528C9.13349 7.15281 9.0971 7.03436 9.01618 6.94147C8.93238 6.84529 8.8095 6.78688 8.66138 6.78646H8.6609L3.83261 6.78646L3.83213 6.78646C3.68443 6.78688 3.56201 6.84562 3.4785 6.94145C3.39783 7.034 3.36099 7.15209 3.36067 7.26449C3.36036 7.3769 3.39656 7.49539 3.4774 7.58834C3.56113 7.68462 3.684 7.74305 3.83213 7.74347H3.83261L8.6609 7.74347ZM21.0787 10.8292L21.0791 10.8289L21.0873 10.8197C21.1865 10.7086 21.2228 10.5769 21.2046 10.4503C21.187 10.3285 21.121 10.2233 21.0366 10.1493C20.9521 10.0753 20.839 10.0237 20.7158 10.0228C20.588 10.022 20.463 10.0762 20.3671 10.1894C20.3668 10.1898 20.3665 10.1902 20.3662 10.1905L18.3197 12.5411L17.2276 11.4469C17.2273 11.4465 17.2269 11.4461 17.2265 11.4458C17.1231 11.3393 16.9947 11.2939 16.8674 11.3033C16.7446 11.3124 16.635 11.3713 16.5556 11.4507C16.4761 11.5302 16.4171 11.6397 16.408 11.7627C16.3985 11.8902 16.444 12.0187 16.5503 12.1224C16.5507 12.1228 16.5511 12.1231 16.5514 12.1235L18.0056 13.5807L18.0068 13.5818C18.1935 13.7653 18.4891 13.7619 18.6761 13.5862C18.6784 13.5841 18.6801 13.5824 18.681 13.5816L18.687 13.5754L18.6953 13.5666L18.7177 13.5416C18.7362 13.5207 18.7626 13.4907 18.7958 13.4529C18.8622 13.3772 18.9561 13.2695 19.0684 13.1407C19.293 12.883 19.5912 12.5399 19.8893 12.1968L20.71 11.2523L20.9821 10.9396L21.0592 10.8513L21.0787 10.8292ZM21.0838 10.8234L21.0842 10.8231L21.0838 10.8234Z" fill="white" stroke="white" stroke-width="0.336843"></path></svg></div><div class="text-2xl text-black font-semibold block mb-2">AI Mock Interview</div></div><div class="text-sm flex flex-row w-full items-center gap-1"><div class="text-sm pt-2">Assess your skills, communication, and confidence in real-time. Get instant feedback and improve your interview performance.</div></div><div class="flex items-center w-auto !w-full"><button type="button" class="relative overflow-hidden hover:shadow-lg flex justify-center flex-row text-white bg-[#3985B6] hover:bg-[#3985B6] focus:bg-[#3985B6] items-center gap-1 border whitespace-nowrap rounded-lg text-sm h-[42px] px-2 py-2 text-center mt-2 !w-full 
+            border-[#3985B6] cursor-pointer">
+            <span class="relative z-10 flex items-center gap-1">Try Free Mock Interview</span>
+        </button>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-300 mb-8"></div>
+</div>
+
+        
+        
+
+        
+</body>
+</html> -->

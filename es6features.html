@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>ES6 Features</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <script>
+            // string interpolation
+            const name="rahul";
+            const age="28";
+            console.log(`my name is ${name} and age is ${age}`)
+            
+
+            // multi line string 
+            // no need to \n to break the line 
+
+            const multiLineString = `This is line 1
+                                     This is line 2
+                                     This is line 3`;
+            console.log(multiLineString);
+
+            // Tagged Templates
+             // Allows passing template literals to functions for advanced processing.
+
+            function tagExample(strings, name, age) {
+                     return `${strings[0]}${name.toUpperCase()}${strings[1]}${age + 5}${strings[2]}`;
+}
+
+            const name1 = "John";
+            const age1 = 25;
+            console.log(tagExample`My name is ${name1} and in 5 years, I will be ${age1}.`);
+
+
+            // default paramters:-
+
+            // Default parameters allow you to set a default value for a function parameter 
+            // if no argument is provided or if undefined is passed.
+
+            function greet(name="xyz"){
+                console.log(`hello: ${name}`)
+            }
+
+            greet();
+            greet("rahul")
+            greet(undefined)
+            greet(null)
+
+         // Default values can be expressions, including function calls:- 
+            function getDefaultName(){
+                return "default user"
+            }
+
+            function welcome(name=getDefaultName()){
+                console.log(`welcome ${name}`)
+
+            }
+
+            welcome();
+            welcome("rahul")
+
+            // Using Default Parameters with Multiple Arguments
+            function calculatePrice(price, tax = 0.05, discount = 0) {
+              return price + price * tax - discount;
+            }
+
+            console.log(calculatePrice(100));         // Output: 105
+            console.log(calculatePrice(100, 0.1));    // Output: 110
+            console.log(calculatePrice(100, 0.1, 5)); // Output: 105 
+
+
+
+
+            // spread and rest operator
+
+            // rest operator(...):-
+            //The rest operator is used in function parameters to collect multiple arguments into a single array.
+
+            function sum(...numbers) {  //Here, ...numbers collects all arguments into an array [1, 2, 3, 4, 5].
+                   return numbers.reduce((acc, num) => acc + num, 0);
+             }
+
+                console.log(sum(1, 2, 3, 4, 5)); 
+                
+            
+            
+            
+            // Destructuring Assignment
+              const [first, second, ...rest] = [10, 20, 30, 40, 50];
+              console.log(first);  
+              console.log(second); 
+              console.log(rest);   // here rest capture the remaining elements
+
+
+            //   spread operator
+            // The spread operator expands an iterable (array, object, or string) into individual elements.
+            // Expanding an Array
+
+            const numbers = [1, 2, 3];
+                 console.log(...numbers); // 1 2 3
+
+           //Copying or Cloning an Array
+           const originalArray = [1, 2, 3];
+                const newArray = [...originalArray]; // Creates a copy
+           console.log(newArray); // [1, 2, 3]
+
+           // Merging Arrays
+
+          const arr1 = [1, 2, 3];
+          const arr2 = [4, 5, 6];
+          const mergedArray = [...arr1, ...arr2];
+          console.log(mergedArray); // [1, 2, 3, 4, 5, 6]
+
+
+           //Expanding an Object (Object Cloning)
+           
+           const obj1 = { name: "Alice", age: 25 };
+           const obj2 = { ...obj1, country: "USA" };
+           console.log(obj2); // { name: "Alice", age: 25, country: "USA" }
+
+  
+
+
+        </script>
+    </body>
+</html>

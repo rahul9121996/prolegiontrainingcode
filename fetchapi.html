@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>fetch api</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <script>
+            //  let p = fetch("https://goweather.herokuapp.com/weather/Ny")
+
+            // we used 2 time then because first then show the status of the api so  if any error occured 
+            // we can fix the error before fetch the api value in 2nd then.
+            // p.then((response)=>{
+                // console.log(response)
+                // console.log(response.status) 
+                // console.log(response.ok)
+                // return response.json()
+
+            // }).then((value)=>{
+            //     console.log(value)
+
+            // })
+
+
+            // post method:-
+            const createTodo = async () => {
+                let options = {
+                    method : "POST",
+                    headers : {
+                        "content-type": "application/json " //Tells the server that we are sending JSON data.
+                    },
+                    body: JSON.stringify({ //JSON.stringify() to convert the object into a JSON string.
+                        title:'harry',
+                        body:'bhai',
+                        userId:1100,
+                    }),
+                }
+                let p =await fetch('https://jsonplaceholder.typicode.com/posts',options)
+                let response = await p.json()
+                return response
+            }
+
+            const mainFunc = async ()=>{
+                let todo = await createTodo()
+                console.log(todo)
+            }
+
+            mainFunc()
+
+       // without async await
+
+         const p= fetch('https://jsonplaceholder.typicode.com/posts', {
+           method: 'POST',
+           headers: {
+             'Content-Type': 'application/json'
+           },
+           body: JSON.stringify({
+             title: 'My Post',
+             body: 'This is the content',
+             userId: 1
+           })
+         })
+         p.then(response => response.json())
+         .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+
+
+        </script>
+    </body>
+</html> 

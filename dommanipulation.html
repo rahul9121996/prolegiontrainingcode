@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Array methods</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <style>
+            .container{
+                background-color: teal;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                width: 450px;
+                padding: 10px;
+                row-gap: 10px;
+            }
+
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: white;
+                display: flex;
+                flex-shrink: 0;
+                justify-content: center;
+                align-items: center;
+            }
+            .round-border{
+                border-radius: 50%;
+                border: 5px solid black;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="Container" id="container">
+            <div class="box" id="box1">box1</div>
+            <div class="box" id="box2">box2</div>
+            <div class="box" id="box3">box3</div>
+            <div class="box" id="box4">box4</div>
+           
+
+        </div>
+
+
+
+        <script>
+        //by using innerHTML
+         const boxone=document.getElementById("box1")
+         boxone.innerHTML="<h1>box1</h1>"
+
+        //by using attributes value
+
+        boxone.style.backgroundColor="red"
+
+        // by selecting classList
+
+        boxone.classList.add('round-border')
+
+        // by selecting classname we can modify multiple classes
+        const boxes=document.getElementsByClassName("box");
+        for(let i = 0; i<boxes.length; i++){
+            boxes[i].classList.add('round-border')
+            
+        }
+        // remove the class round-border
+        box1.classList.remove('round-border')
+
+
+        // creating and appending html
+        const newParagraph = document.createElement('p');
+        newParagraph.innerText="this is brand new";
+
+        const container= document.getElementById('container');
+        container.appendChild(newParagraph);
+
+        </script>
+    </body>

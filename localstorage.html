@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Local storage</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        
+        <script>
+        
+            let key=prompt("Enter key you want to set")
+            let value=prompt("Enter value you want to set")
+
+            localStorage.setItem(key,value)
+
+            console.log(`the valu at ${key} is ${localStorage.getItem(key)}`);
+
+            if (key=="red" || key == "blue"){
+                localStorage.removeItem(key)
+            }
+
+            if (key == 0){
+                localStorage.clear()
+            }
+           
+        </script>
+
+    </body>
+</html>
